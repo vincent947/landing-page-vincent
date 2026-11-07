@@ -155,18 +155,20 @@ body::before{background:#171F2B}
 @media (max-width:960px){.why{grid-template-columns:1fr}}
 
 .offers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.offer{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px;display:flex;flex-direction:column;gap:14px}
+.offers{row-gap:0}
+.offer{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px;display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:14px;align-content:start}
 .offer .o-n{font:700 14px var(--sans);letter-spacing:.08em;color:var(--teal-ink)}
 .offer h3{font:700 21px/1.25 var(--sans);color:var(--slate)}
 .offer p{font-size:15px}
-.offer dl{margin:auto 0 0;padding-top:16px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.offer dl{display:contents;margin:0}
+.offer dl>div:first-child{border-top:1px solid var(--line);padding-top:18px;margin-top:6px}
 .offer dt{font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .offer dd{margin:2px 0 0;font-size:14px;color:var(--slate);font-weight:500}
 .offer.dark{background:var(--slate);border-color:var(--slate);color:#D5DCE4}
-.offer.dark h3,.offer.dark dd{color:#fff}.offer.dark .o-n{color:var(--teal)}.offer.dark dt{color:#AEB8C4}.offer.dark dl{border-color:rgba(255,255,255,.14)}
+.offer.dark h3,.offer.dark dd{color:#fff}.offer.dark .o-n{color:var(--teal)}.offer.dark dt{color:#AEB8C4}.offer.dark dl>div:first-child{border-color:rgba(255,255,255,.14)}
 .offers-foot{margin-top:16px;background:var(--bg);border-radius:var(--r-lg);padding:20px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
 .offers-foot p{font-size:15px;max-width:64ch}.offers-foot strong{color:var(--slate)}
-@media (max-width:960px){.offers{grid-template-columns:1fr}}
+@media (max-width:960px){.offers{grid-template-columns:1fr;row-gap:16px}.offer{display:flex;flex-direction:column;grid-row:auto}}
 .flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
 .chevron{position:relative;min-height:140px;display:flex;align-items:center;gap:18px;padding:24px 56px 24px 52px;color:#fff;clip-path:polygon(0 0,calc(100% - 40px) 0,100% 50%,calc(100% - 40px) 100%,0 100%,40px 50%)}
 .chevron:first-child{clip-path:polygon(0 0,calc(100% - 40px) 0,100% 50%,calc(100% - 40px) 100%,0 100%);border-radius:20px 0 0 20px;padding-left:32px}

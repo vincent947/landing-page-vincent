@@ -154,6 +154,19 @@ body::before{background:#171F2B}
 .wcard h3{font:700 22px/1.25 var(--sans);color:var(--slate)}
 @media (max-width:960px){.why{grid-template-columns:1fr}}
 
+.offers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.offer{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px;display:flex;flex-direction:column;gap:14px}
+.offer .o-n{font:700 14px var(--sans);letter-spacing:.08em;color:var(--teal-ink)}
+.offer h3{font:700 21px/1.25 var(--sans);color:var(--slate)}
+.offer p{font-size:15px}
+.offer dl{margin:auto 0 0;padding-top:16px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.offer dt{font:700 12px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.offer dd{margin:2px 0 0;font-size:14px;color:var(--slate);font-weight:500}
+.offer.dark{background:var(--slate);border-color:var(--slate);color:#D5DCE4}
+.offer.dark h3,.offer.dark dd{color:#fff}.offer.dark .o-n{color:var(--teal)}.offer.dark dt{color:#AEB8C4}.offer.dark dl{border-color:rgba(255,255,255,.14)}
+.offers-foot{margin-top:16px;background:var(--bg);border-radius:var(--r-lg);padding:20px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.offers-foot p{font-size:15px;max-width:64ch}.offers-foot strong{color:var(--slate)}
+@media (max-width:960px){.offers{grid-template-columns:1fr}}
 .flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
 .chevron{position:relative;min-height:140px;display:flex;align-items:center;gap:18px;padding:24px 56px 24px 52px;color:#fff;clip-path:polygon(0 0,calc(100% - 40px) 0,100% 50%,calc(100% - 40px) 100%,0 100%,40px 50%)}
 .chevron:first-child{clip-path:polygon(0 0,calc(100% - 40px) 0,100% 50%,calc(100% - 40px) 100%,0 100%);border-radius:20px 0 0 20px;padding-left:32px}
@@ -247,6 +260,7 @@ footer{padding-block:clamp(56px,7vw,96px) 32px}
     <nav class="links" aria-label="Navigation">
       <a href="#about" data-i="n1">À propos</a>
       <a href="#track" data-i="n2">Réalisations</a>
+      <a href="#interventions" data-i="n6">Interventions</a>
       <a href="#methode" data-i="n3">Méthode</a>
       <a href="#parcours" data-i="n4">Parcours</a>
       <a href="#faq">FAQ</a>
@@ -351,6 +365,48 @@ footer{padding-block:clamp(56px,7vw,96px) 32px}
   </div>
 </section>
 
+<section id="interventions" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="l"><span class="eyebrow" data-i="iv_e">Interventions</span><h2 class="h2" data-i="iv_t" data-html>Comment je peux <span class="hl">vous accompagner.</span></h2></div>
+      <p class="r" data-i="iv_r">Un nombre limité d'engagements, toujours en lien direct avec la direction générale.</p>
+    </div>
+    <div class="offers">
+      <article class="offer">
+        <span class="o-n">01</span>
+        <h3 data-i="o1_t">Board advisory et accompagnement du dirigeant</h3>
+        <p data-i="o1_d">Un regard d'entrepreneur au conseil ou au comité stratégique, et un sparring partner pour le CEO sur les décisions qui engagent l'entreprise.</p>
+        <dl>
+          <div><dt data-i="o_for">Pour qui</dt><dd data-i="o1_f">Fondateurs, CEO, actionnaires</dd></div>
+          <div><dt data-i="o_fmt">Format</dt><dd data-i="o1_m">Engagement dans la durée, quelques jours par mois</dd></div>
+        </dl>
+      </article>
+      <article class="offer">
+        <span class="o-n">02</span>
+        <h3 data-i="o2_t">Mission stratégique</h3>
+        <p data-i="o2_d">Repositionnement, transformation du modèle économique, organisation et gouvernance, plan de croissance : de la décision jusqu'au pilotage de l'exécution.</p>
+        <dl>
+          <div><dt data-i="o_for">Pour qui</dt><dd data-i="o2_f">Entreprises B2B qui doivent franchir un cap</dd></div>
+          <div><dt data-i="o_fmt">Format</dt><dd data-i="o2_m">Mission de 3 à 6 mois, feuille de route et pilotage</dd></div>
+        </dl>
+      </article>
+      <article class="offer dark">
+        <span class="o-n">03</span>
+        <h3 data-i="o3_t">Ouverture de nouveaux marchés</h3>
+        <p data-i="o3_d">Implantation et développement à l'international, partenariats stratégiques et distribution, avec une expérience terrain en Europe et au Moyen-Orient.</p>
+        <dl>
+          <div><dt data-i="o_for">Pour qui</dt><dd data-i="o3_f">Entreprises qui se lancent sur un nouveau marché</dd></div>
+          <div><dt data-i="o_fmt">Format</dt><dd data-i="o3_m">Étude, lancement et accompagnement sur le terrain</dd></div>
+        </dl>
+      </article>
+    </div>
+    <div class="offers-foot">
+      <p data-i="iv_c" data-html><strong>Conférences et prises de parole :</strong> entrepreneuriat, stratégie de croissance B2B, développement international.</p>
+      <a class="btn btn-dark" href="#rdv"><span data-i="iv_b">Prendre rendez-vous</span> <span class="arrow-i" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
 <section id="methode" class="sec">
   <div class="wrap">
     <div class="sec-head">
@@ -359,12 +415,12 @@ footer{padding-block:clamp(56px,7vw,96px) 32px}
     </div>
     <div class="flow" role="list">
       <div class="chevron c1" role="listitem"><span class="n">1</span><span class="tt"><b data-i="m1_t">Vision &amp; stratégie</b><span data-i="m1_s">Décider où aller</span></span></div>
-      <div class="chevron c2" role="listitem"><span class="n">2</span><span class="tt"><b data-i="m2_t">Modèle &amp; financement</b><span data-i="m2_s">Structurer pour croître</span></span></div>
+      <div class="chevron c2" role="listitem"><span class="n">2</span><span class="tt"><b data-i="m2_t">Modèle &amp; organisation</b><span data-i="m2_s">Structurer pour croître</span></span></div>
       <div class="chevron c3" role="listitem"><span class="n">3</span><span class="tt"><b data-i="m3_t">Exécution &amp; expansion</b><span data-i="m3_s">Déployer sur le terrain</span></span></div>
     </div>
     <div class="flow-d">
       <div class="p"><span class="k" data-i="m1_k">Positionnement et marchés</span><p data-i="m1_d">Marchés à conquérir, positionnement, avantage concurrentiel, croissance organique ou externe, allocation du capital.</p><p class="deliv" data-i="m1_l" data-html><strong>Résultat :</strong> une feuille de route stratégique partagée par la direction.</p></div>
-      <div class="p"><span class="k" data-i="m2_k">Modèle économique et levier financier</span><p data-i="m2_d">Revenus récurrents, offres de financement intégrées, partenariats bancaires et investisseurs, organisation et gouvernance.</p><p class="deliv" data-i="m2_l" data-html><strong>Résultat :</strong> un modèle économique et un plan de financement solides.</p></div>
+      <div class="p"><span class="k" data-i="m2_k">Modèle économique et organisation</span><p data-i="m2_d">Revenus récurrents, offre et pricing, organisation, gouvernance et partenariats stratégiques.</p><p class="deliv" data-i="m2_l" data-html><strong>Résultat :</strong> un modèle économique et une organisation prêts à passer à l'échelle.</p></div>
       <div class="p"><span class="k" data-i="m3_k">Go-to-market et international</span><p data-i="m3_d">Lancement de marchés, partenariats stratégiques, équipes et pilotage de la performance, en France comme à l'international.</p><p class="deliv" data-i="m3_l" data-html><strong>Résultat :</strong> une croissance mesurable, pilotée par des indicateurs clairs.</p></div>
     </div>
   </div>
@@ -474,7 +530,7 @@ footer{padding-block:clamp(56px,7vw,96px) 32px}
         <a class="brand" href="#top"><span class="mono" aria-hidden="true">VG</span><b>Vincent Grzeziczak</b></a>
         <p style="font-size:15px;max-width:36ch" data-i="ft_p">Stratégie, conseil et accompagnement des dirigeants B2B.</p>
       </div>
-      <div><h4>Navigation</h4><a href="#about" data-i="n1b">À propos</a><a href="#track" data-i="n2b">Réalisations</a><a href="#methode" data-i="n3b">Méthode</a><a href="#parcours" data-i="n4b">Parcours</a></div>
+      <div><h4>Navigation</h4><a href="#about" data-i="n1b">À propos</a><a href="#track" data-i="n2b">Réalisations</a><a href="#interventions" data-i="n6b">Interventions</a><a href="#methode" data-i="n3b">Méthode</a><a href="#parcours" data-i="n4b">Parcours</a></div>
       <div><h4 data-i="ft2">Entreprise</h4><a href="https://uplease-intl.com">UPLease International</a><a href="#faq">FAQ</a></div>
       <div><h4>Contact</h4><a href="mailto:vincent@grzeziczak.com">vincent@grzeziczak.com</a><a href="tel:+33786956675">+33 7 86 95 66 75</a><a href="https://www.linkedin.com/in/vincent-grzeziczak-11324b1a">LinkedIn</a></div>
     </div>
@@ -505,10 +561,16 @@ footer{padding-block:clamp(56px,7vw,96px) 32px}
     w1_t:"Tested in real conditions", w1_p:"Every recommendation comes from companies I have founded, led or transformed myself.",
     w2_t:"Strategic vision and execution", w2_p:"From strategic decision to field deployment: markets, offer, organisation and financing designed together.",
     w3_t:"International network", w3_p:"Executives, banks, investors and strategic partners in Europe and the Middle East.",
+    n6:"Engagements", n6b:"Engagements", iv_e:"Engagements", iv_t:"How I can <span class=\"hl\">support you.</span>", iv_r:"A limited number of engagements, always working directly with senior leadership.",
+    o_for:"For", o_fmt:"Format",
+    o1_t:"Board advisory and executive support", o1_d:"An entrepreneur's perspective on the board or strategy committee, and a sparring partner for the CEO on decisions that shape the company.", o1_f:"Founders, CEOs, shareholders", o1_m:"Long-term engagement, a few days per month",
+    o2_t:"Strategic engagement", o2_d:"Repositioning, business model transformation, organisation and governance, growth plan: from the decision through to steering execution.", o2_f:"B2B companies facing a step change", o2_m:"3 to 6 month engagement, roadmap and steering",
+    o3_t:"Opening new markets", o3_d:"International set-up and expansion, strategic partnerships and distribution, with hands-on experience in Europe and the Middle East.", o3_f:"Companies entering a new market", o3_m:"Assessment, launch and on-the-ground support",
+    iv_c:"<strong>Talks and speaking:</strong> entrepreneurship, B2B growth strategy, international expansion.", iv_b:"Book a meeting",
     m_e:"Method", m_t:"Decide → Structure → Deploy", m_r:"Three levers to turn an ambition into lasting growth.",
-    m1_t:"Vision & strategy", m1_s:"Decide where to go", m2_t:"Model & financing", m2_s:"Structure to grow", m3_t:"Execution & expansion", m3_s:"Deploy on the ground",
+    m1_t:"Vision & strategy", m1_s:"Decide where to go", m2_t:"Model & organisation", m2_s:"Structure to grow", m3_t:"Execution & expansion", m3_s:"Deploy on the ground",
     m1_k:"Positioning and markets", m1_d:"Markets to win, positioning, competitive advantage, organic or external growth, capital allocation.", m1_l:"<strong>Outcome:</strong> a strategic roadmap shared by the leadership team.",
-    m2_k:"Business model and financial lever", m2_d:"Recurring revenue, embedded financing offers, banking and investor partnerships, organisation and governance.", m2_l:"<strong>Outcome:</strong> a robust business model and financing plan.",
+    m2_k:"Business model and organisation", m2_d:"Recurring revenue, offer and pricing, organisation, governance and strategic partnerships.", m2_l:"<strong>Outcome:</strong> a business model and organisation ready to scale.",
     m3_k:"Go-to-market and international", m3_d:"Market launches, strategic partnerships, teams and performance management, in France and abroad.", m3_l:"<strong>Outcome:</strong> measurable growth, steered by clear indicators.",
     p_e:"Career", p_cap:"Co-Founder · Investor · CEO UPLease International", p_t:"25 years as an entrepreneur",
     pf1:"<strong>Entrepreneur &amp; investor:</strong> structuring and transforming B2B business models, in Europe and internationally.",

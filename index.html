@@ -86,6 +86,18 @@ body::before{background:#171F2B}
 .eyebrow::before{content:"";width:8px;height:22px;background:var(--teal);border-radius:2px}
 .h2{font:700 clamp(26px,2.7vw,38px)/1.05 var(--title);color:var(--slate);text-transform:uppercase;letter-spacing:.005em}
 .h2 .hl{color:var(--teal-deep)}.final .h2 .hl{color:var(--teal)}
+.sec.band{padding-bottom:clamp(72px,9vw,128px);margin-top:clamp(72px,9vw,128px)}
+.sec.alt{background:#F2F6F6}
+.sec.alt .flow-d .p,.sec.alt .faq summary .pm,.sec.alt .stat{background:var(--white)}
+.sec.alt .faq details,.sec.alt .faq details:first-child{border-color:#D5DEDE}
+.sec.dark{background:var(--slate);position:relative;overflow:hidden}
+.sec.dark .h2{color:#fff}.sec.dark .h2 .hl{color:var(--teal)}.sec.dark .eyebrow{color:var(--teal)}
+.sec.dark .wcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}
+.sec.dark .wcard h3{color:#fff}.sec.dark .wcard p{color:#C9D2DC}
+.sec.dark .v3{background:#222C39}
+.sec.dark .bchev{position:absolute;right:-40px;top:clamp(40px,6vw,90px);width:clamp(200px,26vw,340px);opacity:.35;pointer-events:none}
+.band+.band{margin-top:0}
+@media (max-width:760px){.sec.dark .bchev{display:none}}
 .sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:36px}
 .sec-head .l{display:flex;flex-direction:column;gap:18px;max-width:780px}
 .sec-head .r{max-width:440px;font-size:17px}
@@ -312,7 +324,7 @@ footer{padding-block:clamp(56px,7vw,96px) 32px}
   </div>
 </section>
 
-<section id="track" class="sec">
+<section id="track" class="sec band alt">
   <div class="wrap">
     <div class="sec-head">
       <div class="l"><span class="eyebrow" data-i="t_e">Réalisations</span><h2 class="h2" data-i="t_t">Des entreprises créées et dirigées</h2></div>
@@ -347,8 +359,9 @@ footer{padding-block:clamp(56px,7vw,96px) 32px}
   </div>
 </section>
 
-<section class="sec">
-  <div class="wrap">
+<section class="sec band dark">
+  <svg class="bchev" viewBox="0 0 330 110" fill="none" stroke="#40CAB1" stroke-width="5" aria-hidden="true"><path d="M8 8h28l40 47-40 47H8l40-47z"/><path d="M68 8h28l40 47-40 47H68l40-47z"/><path d="M128 8h28l40 47-40 47h-28l40-47z"/><path d="M188 8h28l40 47-40 47h-28l40-47z"/><path d="M248 8h28l40 47-40 47h-28l40-47z"/></svg>
+  <div class="wrap" style="position:relative">
     <div class="sec-head">
       <div class="l"><span class="eyebrow" data-i="w_e">Pourquoi travailler avec Vincent</span><h2 class="h2" data-i="w_t" data-html>Un dirigeant, <span class="hl">pas un théoricien.</span></h2></div>
     </div>
@@ -411,7 +424,7 @@ footer{padding-block:clamp(56px,7vw,96px) 32px}
   </div>
 </section>
 
-<section id="methode" class="sec">
+<section id="methode" class="sec band alt">
   <div class="wrap">
     <div class="sec-head">
       <div class="l"><span class="eyebrow" data-i="m_e">Méthode</span><h2 class="h2" data-i="m_t">Décider → Structurer → Déployer</h2></div>
@@ -456,7 +469,7 @@ footer{padding-block:clamp(56px,7vw,96px) 32px}
   </div>
 </section>
 
-<section id="faq" class="sec">
+<section id="faq" class="sec band alt">
   <div class="wrap faq">
     <div style="display:flex;flex-direction:column;gap:22px">
       <span class="eyebrow">FAQ</span>

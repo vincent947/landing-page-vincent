@@ -115,7 +115,10 @@ body::before{background:#171F2B}
   .hero-bg img{width:min(80%,420px);right:50%;transform:translateX(50%);top:16px;bottom:auto}
   .hero-bg::after{background:linear-gradient(0deg,#171F2B 0%,#171F2B 45%,rgba(23,31,43,.2) 75%,rgba(23,31,43,.4) 100%)}
   .hero-in{padding-top:min(400px,90vw)}
-  .trust{position:relative;right:auto;bottom:auto;margin:0 max(16px, env(safe-area-inset-left,0px)) 32px;flex-wrap:wrap}
+  .trust{position:relative;right:auto;bottom:auto;margin:0 max(16px, env(safe-area-inset-left,0px)) 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:14px 10px;text-align:center}
+  .trust i{display:none}
+  .trust>span{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12.5px;line-height:1.25}
+  .trust>span+span{border-left:1px solid rgba(255,255,255,.16)}
   .hero{flex-direction:column;align-items:stretch}
 }
 
@@ -221,8 +224,7 @@ body::before{background:#171F2B}
 .final p{color:#C9D2DC;font-size:18px;margin-top:18px;max-width:46ch}
 .mailbox{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--r-lg);padding:22px;display:flex;flex-direction:column;gap:14px;position:relative;z-index:1}
 .mailbox code{font:600 clamp(18px,1.8vw,24px) var(--name);color:#fff;user-select:all;word-break:break-all}
-.copy-state{font-size:14px;color:#AEB8C4;min-height:20px}
-.mailbox .tel{font:600 clamp(16px,1.5vw,20px) var(--name);color:var(--teal);text-decoration:none;user-select:all}
+.mailbox .tel{display:inline-flex;align-items:center;min-height:44px;align-self:flex-start;font:600 clamp(16px,1.5vw,20px) var(--name);color:var(--teal);text-decoration:none;user-select:all}
 .final .chev{position:absolute;right:-30px;top:28px;width:300px;opacity:.5}
 @media (max-width:900px){.final{grid-template-columns:1fr}}
 .rdv{margin-top:16px;background:var(--bg);border-radius:var(--r-xl);padding:clamp(24px,4vw,48px)}
@@ -237,7 +239,7 @@ body::before{background:#171F2B}
 @media (max-width:760px){.calendly-inline-widget{height:1000px}}
 .cal-box:has(.calendly-inline-widget){padding:0;display:block}
 .mbar{display:none}
-@media (max-width:760px){.mbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;gap:10px;padding:10px max(16px, env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px, env(safe-area-inset-left,0px));background:rgba(255,255,255,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line)}.mbar .btn{flex:1;min-height:48px;padding:0 12px}body{padding-bottom:76px}}
+@media (max-width:760px){.mbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;gap:10px;padding:10px max(16px, env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px, env(safe-area-inset-left,0px));background:rgba(255,255,255,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line)}.mbar{transform:translateY(110%);visibility:hidden;transition:transform .3s ease,visibility 0s linear .3s}.mbar.on{transform:none;visibility:visible;transition:transform .3s ease}.mbar .btn{flex:1;min-height:48px;padding:0 12px}body{padding-bottom:76px}}
 
 footer{padding-block:clamp(56px,7vw,96px) 32px}
 .fcols{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:32px;padding-bottom:40px;border-bottom:1px solid var(--line)}
@@ -338,7 +340,7 @@ footer{padding-block:clamp(56px,7vw,96px) 32px}
       <article class="tcard now">
         <div class="co"><b data-i="tc4_s">Aujourd'hui</b><small>CEO</small></div>
         <p class="fig">UPLease</p>
-        <p data-i="tc4_p">Co-fondateur : UPLease International, plateforme de financement d'équipements. Leasing, location longue durée, Pay Per Use.</p>
+        <p data-i="tc4_p">Plateforme de financement d'équipements : leasing, location longue durée, Pay Per Use.</p>
         <p class="foot" data-i="tc4_f">Belgique · Europe et international</p>
       </article>
     </div>
@@ -441,7 +443,7 @@ footer{padding-block:clamp(56px,7vw,96px) 32px}
       <div class="facts">
         <p data-i="pf1" data-html><strong>Entrepreneur &amp; investisseur :</strong> structuration et transformation de modèles économiques B2B, en Europe et à l'international.</p>
         <p data-i="pf2" data-html><strong>Expertise :</strong> stratégie de croissance, go-to-market B2B, développement international, transformation et performance opérationnelle.</p>
-        <p data-i="pf3" data-html><strong>Leadership :</strong> direction générale, comités exécutifs, conception de plateformes digitales et de modèles de financement B2B.</p>
+        <p data-i="pf3" data-html><strong>Leadership :</strong> direction générale, comités exécutifs, conception de plateformes digitales et de modèles économiques B2B.</p>
         <p data-i="pf4" data-html><strong>Langues :</strong> français (langue maternelle), anglais (courant).</p>
         <div class="quote"><span data-i="q">« Je transmets uniquement ce que j'ai testé en conditions réelles. »</span><small>Vincent Grzeziczak</small></div>
       </div>
@@ -485,10 +487,8 @@ footer{padding-block:clamp(56px,7vw,96px) 32px}
         <div style="display:flex;flex-wrap:wrap;gap:10px">
           <a class="btn btn-teal" href="mailto:vincent@grzeziczak.com?subject=Prise%20de%20contact%20via%20grzeziczak.com" id="mailto"><span data-i="c_mail">Écrire un e-mail</span> <span aria-hidden="true">→</span></a>
           <a class="btn btn-ghost" href="tel:+33786956675" data-i="c_call">Appeler</a>
-          <button type="button" class="btn btn-ghost" id="copy" data-i="c_copy">Copier l'adresse</button>
           <a class="btn btn-ghost" href="https://www.linkedin.com/in/vincent-grzeziczak-11324b1a">LinkedIn ↗</a>
         </div>
-        <p class="copy-state" id="copy-state" aria-live="polite"></p>
       </div>
     </div>
     <div class="rdv" id="rdv">
@@ -558,7 +558,7 @@ footer{padding-block:clamp(56px,7vw,96px) 32px}
     tc1_s:"Finance", tc1_p:"Entered equipment finance: structuring and financing large IT projects, then leading a B2B leasing company for 12 years.", tc1_f:"Founder, then CEO",
     tc2_s:"International", tc2_p:"Expansion into the Middle East: local company set-up, banking partnerships and B2B leasing roll-out with major technology players.", tc2_f:"Dubai, United Arab Emirates",
     tc3_s:"Advisory & digital", tc3_p:"Advisory on business model transformation, then digital marketing and transformation on an agency's executive committee. Built a B2B financing SaaS platform.", tc3_f:"Paris and London",
-    tc4_s:"Today", tc4_p:"Co-founder: UPLease International, equipment finance platform. Leasing, long-term rental, Pay Per Use.", tc4_f:"Belgium · Europe and international",
+    tc4_s:"Today", tc4_p:"Equipment finance platform: leasing, long-term rental, Pay Per Use.", tc4_f:"Belgium · Europe and international",
     w_e:"Why work with Vincent", w_t:"An operator, <span class=\"hl\">not a theorist.</span>",
     w1_t:"Tested in real conditions", w1_p:"Every recommendation comes from companies I have founded, led or transformed myself.",
     w2_t:"Strategic vision and execution", w2_p:"From strategic decision to field deployment: markets, offer, organisation and governance designed together.",
@@ -577,7 +577,7 @@ footer{padding-block:clamp(56px,7vw,96px) 32px}
     p_e:"Career", p_cap:"Co-Founder · Investor · CEO UPLease International", p_t:"25 years as an entrepreneur",
     pf1:"<strong>Entrepreneur &amp; investor:</strong> structuring and transforming B2B business models, in Europe and internationally.",
     pf2:"<strong>Expertise:</strong> growth strategy, B2B go-to-market, international expansion, transformation and operational performance.",
-    pf3:"<strong>Leadership:</strong> general management, executive committees, design of digital platforms and B2B financing models.",
+    pf3:"<strong>Leadership:</strong> general management, executive committees, design of digital platforms and B2B business models.",
     pf4:"<strong>Languages:</strong> French (native), English (fluent).",
     q:"“I only pass on what I have tested in real conditions.”",
     j1_t:"Partner, International Expansion", j1_d:"Launched the German premium electronics brand in the UAE and Saudi Arabia.",
@@ -589,7 +589,7 @@ footer{padding-block:clamp(56px,7vw,96px) 32px}
     q3:"How do you work?", a3:"Strategic advisory, board advisory and support for growth or international expansion projects, always in direct contact with leadership.",
     q4:"Do you work internationally?", a4:"Yes. I have built and led businesses in Europe and the Middle East, in French and in English.",
     q5:"What is the link with UPLease?", a5:"UPLease International is the company I co-founded and lead. It reflects my conviction: finance is a strategic growth lever for B2B companies.",
-    c_t:"A market to open? <span class=\"hl\">Let's talk.</span>", c_p:"A growth project, a new market to open, a business model to transform, a partnership or a board role.", c_copy:"Copy address", c_mail:"Send an email", c_call:"Call", m_contact:"Book a call", r_e:"Meeting", r_t:"Book a 30-minute call", r_p:"Pick a slot directly in my calendar. You will receive the confirmation and the video call link by email.", r_fb:"Open the booking calendar", cg_t:"Booking calendar", cg_d:"The calendar is provided by Calendly, which sets cookies. It only loads at your request. <a href=\"confidentialite.html#cookies\">Learn more</a>", cg_b:"Show available slots", cg_o:"Open on Calendly ↗", ft_ml:"Legal notice", ft_pc:"Privacy and cookies",
+    c_t:"A market to open? <span class=\"hl\">Let's talk.</span>", c_p:"A growth project, a new market to open, a business model to transform, a partnership or a board role.",  c_mail:"Send an email", c_call:"Call", m_contact:"Book a call", r_e:"Meeting", r_t:"Book a 30-minute call", r_p:"Pick a slot directly in my calendar. You will receive the confirmation and the video call link by email.", r_fb:"Open the booking calendar", cg_t:"Booking calendar", cg_d:"The calendar is provided by Calendly, which sets cookies. It only loads at your request. <a href=\"confidentialite.html#cookies\">Learn more</a>", cg_b:"Show available slots", cg_o:"Open on Calendly ↗", ft_ml:"Legal notice", ft_pc:"Privacy and cookies",
     ft_p:"Strategy, advisory and support for B2B leaders.", ft2:"Company", ft_b:"Paris · Brussels · Edinburgh"
   };
   var nodes = Array.prototype.slice.call(document.querySelectorAll("[data-i]"));
@@ -606,7 +606,6 @@ footer{padding-block:clamp(56px,7vw,96px) 32px}
     document.documentElement.lang = l;
     document.getElementById("btn-fr").setAttribute("aria-pressed", l === "fr");
     document.getElementById("btn-en").setAttribute("aria-pressed", l === "en");
-        document.getElementById("copy-state").textContent = "";
     try { localStorage.setItem("vg-lang", l); } catch(e) {}
   }
   document.getElementById("btn-fr").addEventListener("click", function(){ setLang("fr"); });
@@ -615,17 +614,10 @@ footer{padding-block:clamp(56px,7vw,96px) 32px}
   if (location.hash === "#en") start = "en";
   else { try { if (localStorage.getItem("vg-lang") === "en") start = "en"; } catch(e) {} }
   if (start === "en") setLang("en");
-  document.getElementById("copy").addEventListener("click", function(){
-    var t = document.getElementById("mail").textContent;
-    var st = document.getElementById("copy-state");
-    var ok = cur === "en" ? "Address copied." : "Adresse copiée.";
-    var ko = cur === "en" ? "Select the address to copy it." : "Sélectionnez l'adresse pour la copier.";
-    function fallback(){
-      var r = document.createRange(); r.selectNodeContents(document.getElementById("mail"));
-      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); st.textContent = ko;
-    }
-    try { navigator.clipboard.writeText(t).then(function(){ st.textContent = ok; }, fallback); } catch(e) { fallback(); }
-  });
+  var mb=document.querySelector(".mbar"), hc=document.querySelector(".pill-cta");
+  if (mb && hc && "IntersectionObserver" in window) {
+    new IntersectionObserver(function(e){ var x=e[0]; mb.classList.toggle("on", !x.isIntersecting && x.boundingClientRect.top < 0); }).observe(hc);
+  } else if (mb) mb.classList.add("on");
 })();
 </script>
 

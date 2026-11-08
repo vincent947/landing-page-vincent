@@ -92,12 +92,8 @@ body::before{background:#171F2B}
 .sec.alt .faq details,.sec.alt .faq details:first-child{border-color:#D5DEDE}
 .sec.dark{background:var(--slate);position:relative;overflow:hidden}
 .sec.dark .h2{color:#fff}.sec.dark .h2 .hl{color:var(--teal)}.sec.dark .eyebrow{color:var(--teal)}
-.sec.dark .wcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}
 .sec.dark .wcard h3{color:#fff}.sec.dark .wcard p{color:#C9D2DC}
-.sec.dark .v3{background:#222C39}
-.sec.dark .bchev{position:absolute;right:-40px;top:clamp(40px,6vw,90px);width:clamp(200px,26vw,340px);opacity:.35;pointer-events:none}
 .band+.band{margin-top:0}
-@media (max-width:760px){.sec.dark .bchev{display:none}}
 .sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:36px}
 .sec-head .l{display:flex;flex-direction:column;gap:18px;max-width:780px}
 .sec-head .r{max-width:440px;font-size:17px}
@@ -159,15 +155,13 @@ body::before{background:#171F2B}
 @media (max-width:1080px){.track{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.track{grid-template-columns:1fr}}
 
-.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.wcard{border-radius:var(--r-xl);overflow:hidden;background:var(--bg);display:flex;flex-direction:column}
-.wcard .vis{aspect-ratio:16/10;display:flex;align-items:flex-end;padding:24px;position:relative;overflow:hidden}
-.wcard .vis b{font:700 clamp(48px,5vw,72px)/.8 var(--name);color:rgba(255,255,255,.95);position:relative;z-index:1}
-.wcard .vis svg{position:absolute;right:-20px;top:20px;width:72%;height:auto}
-.v1{background:#84D3C2}.v2{background:var(--teal-mid)}.v3{background:var(--slate)}
-.wcard .txt{padding:28px;display:flex;flex-direction:column;gap:12px}
-.wcard h3{font:700 22px/1.25 var(--sans);color:var(--slate)}
-@media (max-width:960px){.why{grid-template-columns:1fr}}
+.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,4vw,56px)}
+.wcard{position:relative;display:flex;flex-direction:column;gap:14px;padding-top:22px;border-top:1px solid rgba(255,255,255,.18)}.wcard::before{content:"";position:absolute;left:0;top:-2px;width:44px;height:3px;background:var(--teal)}
+.wcard .wn{font:700 15px var(--name);letter-spacing:.06em;color:var(--teal)}
+.wcard .txt{display:flex;flex-direction:column;gap:10px}
+.wcard h3{font:700 clamp(19px,1.5vw,22px)/1.25 var(--sans);color:var(--slate)}
+.wcard p{font-size:16px;line-height:1.6}
+@media (max-width:960px){.why{grid-template-columns:1fr;gap:28px}}
 
 .offers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .offers{row-gap:0}
@@ -360,22 +354,21 @@ footer{padding-block:clamp(56px,7vw,96px) 32px}
 </section>
 
 <section class="sec band dark">
-  <svg class="bchev" viewBox="0 0 330 110" fill="none" stroke="#40CAB1" stroke-width="5" aria-hidden="true"><path d="M8 8h28l40 47-40 47H8l40-47z"/><path d="M68 8h28l40 47-40 47H68l40-47z"/><path d="M128 8h28l40 47-40 47h-28l40-47z"/><path d="M188 8h28l40 47-40 47h-28l40-47z"/><path d="M248 8h28l40 47-40 47h-28l40-47z"/></svg>
-  <div class="wrap" style="position:relative">
+  <div class="wrap">
     <div class="sec-head">
       <div class="l"><span class="eyebrow" data-i="w_e">Pourquoi travailler avec Vincent</span><h2 class="h2" data-i="w_t" data-html>Un dirigeant, <span class="hl">pas un théoricien.</span></h2></div>
     </div>
     <div class="why">
       <article class="wcard">
-        <div class="vis v1"><b>01</b><svg viewBox="0 0 200 120" fill="none" stroke="#FFFFFF" stroke-width="4" aria-hidden="true"><path d="M10 100 60 60l40 25 90-70"/><path d="M150 15h40v40"/></svg></div>
+        <span class="wn">01</span>
         <div class="txt"><h3 data-i="w1_t">Testé en conditions réelles</h3><p data-i="w1_p">Chaque recommandation vient d'entreprises que j'ai moi-même créées, dirigées ou transformées.</p></div>
       </article>
       <article class="wcard">
-        <div class="vis v2"><b>02</b><svg viewBox="0 0 200 120" fill="none" stroke="#FFFFFF" stroke-width="4" aria-hidden="true"><circle cx="70" cy="60" r="44"/><circle cx="130" cy="60" r="44"/></svg></div>
+        <span class="wn">02</span>
         <div class="txt"><h3 data-i="w2_t">Vision stratégique et exécution</h3><p data-i="w2_p">De la décision stratégique au déploiement terrain : marchés, offre, organisation et gouvernance pensés ensemble.</p></div>
       </article>
       <article class="wcard">
-        <div class="vis v3"><b>03</b><svg viewBox="0 0 200 120" fill="none" stroke="#40CAB1" stroke-width="4" aria-hidden="true"><path d="M8 10h22l32 50-32 50H8l32-50zM58 10h22l32 50-32 50H58l32-50zM108 10h22l32 50-32 50h-22l32-50z"/></svg></div>
+        <span class="wn">03</span>
         <div class="txt"><h3 data-i="w3_t">Réseau international</h3><p data-i="w3_p">Dirigeants, banques, investisseurs et partenaires stratégiques en Europe et au Moyen-Orient.</p></div>
       </article>
     </div>
